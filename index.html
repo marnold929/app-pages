@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>App legal &amp; support — Matthew Arnold</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Public+Sans:wght@0,400;0,500;0,600;0,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root {
+  --ground: #F1F4F6; --surface: #FFFFFF; --surface-2: #E9EEF1;
+  --ink: #131A21; --ink-2: #3C4954; --ink-3: #6E7E8B;
+  --rule: #D8E0E6; --rule-strong: #BFCBD4;
+  --safe: #0D5B63; --safe-wash: #E0EEF0;
+  --stop: #B81E1E; --stop-wash: #FAE2E0;
+  --warn: #B36400; --warn-wash: #FBEBD6;
+  --cold: #14618E; --cold-wash: #DDECF6;
+  --violet: #5B4B9E; --violet-wash: #E8E4F6;
+  --shadow: 0 1px 2px rgba(16,25,23,.05), 0 8px 24px -12px rgba(16,25,23,.16);
+  --display: "Bricolage Grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --body: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #0E1317; --surface: #151C22; --surface-2: #1B242B;
+    --ink: #E7EDF1; --ink-2: #C2CDD6; --ink-3: #94A3AF;
+    --rule: #2A353E; --rule-strong: #3B4952;
+    --safe: #4FB3BF; --safe-wash: #143135;
+    --stop: #FF7466; --stop-wash: #331512;
+    --warn: #F0A63C; --warn-wash: #2E1F0C;
+    --cold: #62B6EA; --cold-wash: #0D2433;
+    --violet: #A997F0; --violet-wash: #1E1836;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #0E1317; --surface: #151C22; --surface-2: #1B242B;
+  --ink: #E7EDF1; --ink-2: #C2CDD6; --ink-3: #94A3AF;
+  --rule: #2A353E; --rule-strong: #3B4952;
+  --safe: #4FB3BF; --safe-wash: #143135;
+  --stop: #FF7466; --stop-wash: #331512;
+  --warn: #F0A63C; --warn-wash: #2E1F0C;
+  --cold: #62B6EA; --cold-wash: #0D2433;
+  --violet: #A997F0; --violet-wash: #1E1836;
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.7);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--ground); color: var(--ink);
+  font-family: var(--body); font-size: 16px; line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 720px; margin: 0 auto; padding: 48px 20px 90px; }
+h1,h2,h3 { font-family: var(--display); font-weight: 800; margin: 0; line-height: 1.14; text-wrap: balance; letter-spacing: -.015em; }
+h1 { font-size: clamp(32px, 6vw, 44px); }
+h2 { font-size: clamp(20px, 3.6vw, 24px); }
+h3 { font-size: 17px; }
+p { margin: 0; }
+a { color: var(--safe); }
+.eyebrow { font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); }
+.lede { font-size: 17.5px; color: var(--ink-2); margin-top: 12px; }
+.stack { display: flex; flex-direction: column; gap: 36px; }
+.stack-sm { display: flex; flex-direction: column; gap: 12px; }
+section > p + p, section > p + ul { margin-top: 12px; }
+ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; color: var(--ink-2); }
+.card { background: var(--surface); border: 1px solid var(--rule); border-radius: 16px; padding: 20px; box-shadow: var(--shadow); }
+.card.flat { box-shadow: none; }
+.note-box { border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 8px; }
+.note-box.cold { background: var(--cold-wash); }
+.note-box.warn { background: var(--warn-wash); }
+.note-box.safe { background: var(--safe-wash); }
+.note-box b { font-family: var(--display); font-size: 16px; }
+.note-box.cold b { color: var(--cold); } .note-box.warn b { color: var(--warn); } .note-box.safe b { color: var(--safe); }
+.note-box p, .note-box li { font-size: 15px; }
+.fill { font-family: var(--mono); font-size: 13px; background: var(--warn-wash); color: var(--warn); padding: 2px 7px; border-radius: 5px; font-weight: 600; }
+.foot { border-top: 1px solid var(--rule); padding-top: 20px; font-family: var(--mono); font-size: 11.5px; line-height: 1.8; color: var(--ink-3); }
+.tbl { width: 100%; border-collapse: collapse; font-size: 15px; }
+.tbl th { text-align: left; font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); padding: 0 10px 10px 0; border-bottom: 1px solid var(--rule); }
+.tbl td { padding: 11px 10px 11px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.tbl tr:last-child td { border-bottom: 0; }
+.scroller { overflow-x: auto; }
+</style>
+</head>
+<body>
+
+<div class="wrap stack">
+
+<header>
+  <div class="eyebrow">Matthew Arnold · Independent iOS developer</div>
+  <h1>App legal &amp; support</h1>
+  <p class="lede">Privacy policies and support pages for the apps I publish on the App Store. Every app here is a one-time purchase, works offline, and collects nothing.</p>
+</header>
+
+<section class="stack-sm">
+  <h2>A&amp;P Mechanic Exam Prep</h2>
+  <p>Study app for the three FAA aviation mechanic knowledge tests — General, Airframe and Powerplant.</p>
+  <p><a href="apprep/privacy.html">Privacy policy</a> &nbsp;·&nbsp; <a href="apprep/support.html">Support</a></p>
+</section>
+
+<p class="foot">
+  Independent study material. Not affiliated with, endorsed by, or sponsored by the Federal Aviation Administration or any other certifying body.<br><br>
+  Questions about any app: <a href="mailto:matthewarnoldlmbt@gmail.com">matthewarnoldlmbt@gmail.com</a>
+</p>
+
+</div>
+
+</body>
+</html>
