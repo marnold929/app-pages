@@ -1,0 +1,162 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Public+Sans:wght@0,400;0,500;0,600;0,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root {
+  --ground: #F1F4F6; --surface: #FFFFFF; --surface-2: #E9EEF1;
+  --ink: #131A21; --ink-2: #3C4954; --ink-3: #6E7E8B;
+  --rule: #D8E0E6; --rule-strong: #BFCBD4;
+  --safe: #B03A5E; --safe-wash: #F9E4EA;
+  --stop: #B81E1E; --stop-wash: #FAE2E0;
+  --warn: #B36400; --warn-wash: #FBEBD6;
+  --cold: #14618E; --cold-wash: #DDECF6;
+  --violet: #5B4B9E; --violet-wash: #E8E4F6;
+  --shadow: 0 1px 2px rgba(16,25,23,.05), 0 8px 24px -12px rgba(16,25,23,.16);
+  --display: "Bricolage Grotesque", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --body: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #0E1317; --surface: #151C22; --surface-2: #1B242B;
+    --ink: #E7EDF1; --ink-2: #C2CDD6; --ink-3: #94A3AF;
+    --rule: #2A353E; --rule-strong: #3B4952;
+    --safe: #F28BAA; --safe-wash: #3B1A26;
+    --stop: #FF7466; --stop-wash: #331512;
+    --warn: #F0A63C; --warn-wash: #2E1F0C;
+    --cold: #62B6EA; --cold-wash: #0D2433;
+    --violet: #A997F0; --violet-wash: #1E1836;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.7);
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #0E1317; --surface: #151C22; --surface-2: #1B242B;
+  --ink: #E7EDF1; --ink-2: #C2CDD6; --ink-3: #94A3AF;
+  --rule: #2A353E; --rule-strong: #3B4952;
+  --safe: #F28BAA; --safe-wash: #3B1A26;
+  --stop: #FF7466; --stop-wash: #331512;
+  --warn: #F0A63C; --warn-wash: #2E1F0C;
+  --cold: #62B6EA; --cold-wash: #0D2433;
+  --violet: #A997F0; --violet-wash: #1E1836;
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px -12px rgba(0,0,0,.7);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--ground); color: var(--ink);
+  font-family: var(--body); font-size: 16px; line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 720px; margin: 0 auto; padding: 48px 20px 90px; }
+h1,h2,h3 { font-family: var(--display); font-weight: 800; margin: 0; line-height: 1.14; text-wrap: balance; letter-spacing: -.015em; }
+h1 { font-size: clamp(32px, 6vw, 44px); }
+h2 { font-size: clamp(20px, 3.6vw, 24px); }
+h3 { font-size: 17px; }
+p { margin: 0; }
+a { color: var(--safe); }
+.eyebrow { font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); }
+.lede { font-size: 17.5px; color: var(--ink-2); margin-top: 12px; }
+.stack { display: flex; flex-direction: column; gap: 36px; }
+.stack-sm { display: flex; flex-direction: column; gap: 12px; }
+section > p + p, section > p + ul { margin-top: 12px; }
+ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; color: var(--ink-2); }
+.card { background: var(--surface); border: 1px solid var(--rule); border-radius: 16px; padding: 20px; box-shadow: var(--shadow); }
+.card.flat { box-shadow: none; }
+.note-box { border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 8px; }
+.note-box.cold { background: var(--cold-wash); }
+.note-box.warn { background: var(--warn-wash); }
+.note-box.safe { background: var(--safe-wash); }
+.note-box b { font-family: var(--display); font-size: 16px; }
+.note-box.cold b { color: var(--cold); } .note-box.warn b { color: var(--warn); } .note-box.safe b { color: var(--safe); }
+.note-box p, .note-box li { font-size: 15px; }
+.fill { font-family: var(--mono); font-size: 13px; background: var(--warn-wash); color: var(--warn); padding: 2px 7px; border-radius: 5px; font-weight: 600; }
+.foot { border-top: 1px solid var(--rule); padding-top: 20px; font-family: var(--mono); font-size: 11.5px; line-height: 1.8; color: var(--ink-3); }
+.tbl { width: 100%; border-collapse: collapse; font-size: 15px; }
+.tbl th { text-align: left; font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); padding: 0 10px 10px 0; border-bottom: 1px solid var(--rule); }
+.tbl td { padding: 11px 10px 11px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.tbl tr:last-child td { border-bottom: 0; }
+.scroller { overflow-x: auto; }
+</style>
+<title>Nail Tech Theory Exam Prep · Privacy Policy</title>
+<div class="wrap stack">
+
+<header>
+  <div class="eyebrow">Effective September 2026 · version 1.0</div>
+  <h1>Privacy Policy</h1>
+  <p class="lede">This app does not collect your data. Not "collects it but promises to be careful" — it has no account system, no analytics, no advertising, no third-party code, and does not send anything anywhere. This page explains what that means in practice.</p>
+</header>
+
+<div class="note-box safe">
+  <b>The short version</b>
+  <p>Everything you do in this app stays on your device. There is no server. We could not see your study progress if we wanted to, because it never leaves your phone.</p>
+</div>
+
+<section class="stack-sm">
+  <h2>What we collect</h2>
+  <p>Nothing. The app has no sign-up, no login, no email capture, and no way to identify you. We do not collect your name, email address, phone number, location, contacts, photos, device identifiers, advertising identifiers, or usage analytics.</p>
+</section>
+
+<section class="stack-sm">
+  <h2>What the app stores on your device</h2>
+  <p>To keep track of your studying, the app saves a single file in its own private storage area on your device. That file contains:</p>
+  <ul>
+    <li>Your exam date if you set one, and which kit items you have ticked off in the practical guide</li>
+    <li>Which questions you have answered and whether you got them right</li>
+    <li>Which chapters and chapter parts you have read</li>
+    <li>Your flashcard review schedule</li>
+    <li>Your practice and mock exam results</li>
+    <li>Your study streak</li>
+  </ul>
+  <p>This file is stored in the app's sandbox, which is a private area that other apps cannot read. It is never transmitted. If your device backs up to iCloud or to a computer, this file is included in that backup the same way any app's data is — that backup is between you and Apple, and we have no access to it.</p>
+  <p>You can erase all of it at any time from Settings inside the app, under "Reset all progress." Deleting the app also deletes the file permanently.</p>
+</section>
+
+<section class="stack-sm">
+  <h2>Network use</h2>
+  <p>The app does not require an internet connection and does not make network requests. All study content ships inside the app itself.</p>
+  <p>Where the app shows a web address — for example, pointing you to your state board or its testing vendor to schedule the real exam — tapping it opens your browser. What happens after that is governed by the privacy policy of the site you visited, not this one.</p>
+</section>
+
+<section class="stack-sm">
+  <h2>Crash reports</h2>
+  <p>If you have turned on "Share With App Developers" in your device's Privacy &amp; Security settings, Apple may send us anonymised crash reports and performance data. This is a feature of iOS, not of this app, and it is off unless you switch it on. Those reports contain diagnostic information about the crash, not your study data. You can change this at any time in the Settings app under Privacy &amp; Security, then Analytics &amp; Improvements.</p>
+</section>
+
+<section class="stack-sm">
+  <h2>Children</h2>
+  <p>The app is intended for adults preparing for the nail technician licensing theory exam. It collects no personal information from anyone, including children under 13.</p>
+</section>
+
+<section class="stack-sm">
+  <h2>Third parties</h2>
+  <p>There are none. The app contains no advertising networks, no analytics software development kits, no social login, and no tracking libraries of any kind. Nothing about you is sold, shared, or disclosed, because nothing about you is collected.</p>
+</section>
+
+<section class="stack-sm">
+  <h2>Purchases</h2>
+  <p>Any purchase made in the app is handled entirely by Apple through the App Store. We never see your payment details. Apple's own privacy policy governs that transaction.</p>
+</section>
+
+<section class="stack-sm">
+  <h2>Your rights</h2>
+  <p>Laws such as the GDPR and the CCPA give you rights to access, correct, and delete personal data a company holds about you. We hold none, so there is nothing for us to hand over or erase. The data on your device is already entirely yours: view it in the app, reset it in Settings, or delete the app to remove it.</p>
+</section>
+
+<section class="stack-sm">
+  <h2>Changes to this policy</h2>
+  <p>If a future version of the app collects anything — for example, if optional account sync is added — this page will be updated before that version ships, and the change will be described in the app's release notes. The effective date at the top will change.</p>
+</section>
+
+<section class="stack-sm">
+  <h2>Contact</h2>
+  <p>Questions about this policy: <a href="mailto:matthewarnoldlmbt@gmail.com">matthewarnoldlmbt@gmail.com</a></p>
+  <p>Nail Tech Theory Exam Prep is published by Matthew Arnold, an independent developer based in North Carolina, USA. Email is the fastest way to reach us; if you need a postal address for a formal request, ask and we will provide one.</p>
+</section>
+
+
+
+<p class="foot">
+  This app is independent study material. It is not affiliated with, endorsed by, or sponsored by the National-Interstate Council of State Boards of Cosmetology (NIC), any state board, or any testing vendor. It is a study aid, not a substitute for your school, a product&#8217;s directions, your state&#8217;s rules, or medical advice.<br><br>
+  This page was drafted to describe an app that collects nothing. It is not legal advice, and it is not a substitute for review by a lawyer if your circumstances are more complicated than they appear.
+</p>
+
+</div>
